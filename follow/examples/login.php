@@ -31,6 +31,7 @@
     }
 
     if ($_SESSION['loggedin'] === true) {
+      $_SESSION['loggedin'] = false;
       header('Location: landing.php');
     }
   }
