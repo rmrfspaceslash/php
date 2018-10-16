@@ -13,14 +13,7 @@
 
     //assign user inputs to variables
     $username = $_POST['username'];
-    //Scrub that username for those bad eggs!
-    $username = filter_var($username, FILTER_SANITIZE_STRING);
-    //trim whitespace
-    $username = trim($username);
-    //No slashes permitted here
-    $username = stripslashes($username);
-    //remove spaces in $username
-    $username = str_replace(' ','',$username);
+
     //grab and encrypt password, need not be cleaned because it is hashed!
     $password = $_POST['password'];
 
@@ -28,7 +21,7 @@
     $password = password_hash($password, PASSWORD_BCRYPT);
 
     //add entry into database
-    $sql = "INSERT INTO users (username,password) VALUES ('$username','$password')";
+    $sql = "INSERT INTO fm_users (users,password) VALUES ('$username','$password')";
     $conn->query($sql);
 
 		header("Location: login.php");
