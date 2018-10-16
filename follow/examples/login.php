@@ -21,7 +21,7 @@
 
     //extract results from query and set login variable if succeed else error
     while ($row = $result->fetch_assoc()) {
-      if ($username === $row['username'] && password_verify($password, $row['password'])) {
+      if ($username === $row['users'] && password_verify($password, $row['password'])) {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
         $_SESSION['fail'] = null;
