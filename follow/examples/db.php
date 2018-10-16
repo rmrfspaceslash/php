@@ -9,8 +9,8 @@ $db_name = "noah";
 //establish connection
 $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
 
-if (!$conn) {
-  echo "Sorry about your luck";
+if ($conn -> connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
 
 ?>
