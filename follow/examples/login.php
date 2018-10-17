@@ -8,6 +8,11 @@
     session_start();
   }
 
+  if ($_SESSION['loggedin'] === true) {
+    $_SESSION['loggedin'] = false;
+    header('Location: landing.php');
+  }
+
   //Match username and password to database
   if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
@@ -28,11 +33,6 @@
       }else {
         $_SESSION['fail'] = true;
       }
-    }
-
-    if ($_SESSION['loggedin'] === true) {
-      $_SESSION['loggedin'] = false;
-      header('Location: landing.php');
     }
   }
 
@@ -118,7 +118,7 @@
                     <div class="row">
                         <div class="col-lg-4 ml-auto mr-auto">
                             <div class="card card-register">
-                                <h3 class="title">Welcome</h3>
+                                <h2 class="title">Login</h2>
 								<div class="social-line text-center">
                                     <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
                                         <i class="fa fa-facebook-square"></i>
