@@ -8,10 +8,7 @@
     session_start();
   }
 
-  if ($_SESSION['loggedin'] === true) {
-    $_SESSION['loggedin'] = false;
-    header('Location: profile.php');
-  }
+
 
   //Match username and password to database
   if (isset($_POST['username']) && isset($_POST['password'])) {
@@ -33,6 +30,10 @@
       }else {
         $_SESSION['fail'] = true;
       }
+    }
+    if ($_SESSION['loggedin'] === true) {
+      $_SESSION['loggedin'] = false;
+      header('Location: profile.php');
     }
   }
 
