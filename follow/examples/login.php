@@ -10,7 +10,7 @@
 
   if ($_SESSION['loggedin'] === true) {
     $_SESSION['loggedin'] = false;
-    header('Location: landing.php');
+    header('Location: profile.php');
   }
 
   //Match username and password to database
