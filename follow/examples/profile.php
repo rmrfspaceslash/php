@@ -33,7 +33,7 @@
 					<span class="navbar-toggler-bar"></span>
 					<span class="navbar-toggler-bar"></span>
 	            </button>
-	            <a class="navbar-brand" href="#">Come with me/a>
+	            <a class="navbar-brand" href="#">Come with me </a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
@@ -44,7 +44,7 @@
 	                    <a href="#" target="_blank" class="nav-link">A World of</a>
 	                </li>
 									<li>
-											<p>PURE IMAGINATION</P>
+
 									</li>
 	            </ul>
 	        </div>
@@ -62,7 +62,7 @@
                         <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                     <div class="name">
-                        <h4 class="title">Jane Faker<br /></h4>
+                        <h4 class="title">PURE IMAGINATION<br /></h4>
 						<h6 class="description">Music Producer</h6>
                     </div>
                 </div>
