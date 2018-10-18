@@ -41,7 +41,9 @@
 	                    <a href="login.php" class="nav-link">And you'll see</a>
 	                </li>
 	                <li class="nav-item">
-	                    <a href="#" target="_blank" class="nav-link">A World of</a>
+	                    <a href="#" target="_blank" class="nav-link">A World of
+												<?php echo $_SESSION['username']; ?>
+											</a>
 	                </li>
 									<li>
 
