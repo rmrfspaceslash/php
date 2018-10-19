@@ -78,7 +78,7 @@ if (!isset($_SESSION)) {
                         <img src="<?php echo $_SESSION['img_url'];?>" class="img-circle img-no-padding img-responsive">
                     </div>
                     <div class="name">
-                        <h4 class="title"><?php echo "$_SESSION['firstname'] $_SESSION['lastname']"; ?><br /></h4>
+                        <h4 class="title"><?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?><br /></h4>
 						<h6 class="description">Music Producer</h6>
                     </div>
                 </div>
