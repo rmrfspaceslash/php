@@ -81,13 +81,13 @@ if (!isset($_SESSION)) {
                     </div>
                     <div class="name">
                         <h4 class="title"><?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?><br /></h4>
-						<h6 class="description">?<<?php echo $_SESSION['title']; ?></h6>
+						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 ml-auto mr-auto text-center">
-                        <p>?<?php echo $_SESSION['description']; ?></p>
-                        <br />
+                        <p><?php echo $_SESSION['description']; ?></p>
+                        <br/>
                         <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
                     </div>
                 </div>
