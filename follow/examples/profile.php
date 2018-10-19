@@ -8,6 +8,8 @@ if (!isset($_SESSION)) {
 //Create session username somewhere (session email)
 //modify fm-users table to include first name and last name and img_url
 //set session variables for first name and last name and img_url
+//modify fm_users to add title -> $session[title]
+//modify fm_users to add description-> $session[description]
 
  ?>
 
