@@ -5,6 +5,7 @@ if (!isset($_SESSION)) {
 	session_start();
 }
 
+//Create session username somewhere (session email)
 //modify fm-users table to include first name and last name and img_url
 //set session variables for first name and last name and img_url
 
