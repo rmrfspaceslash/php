@@ -16,7 +16,7 @@
     $password = $_POST['password'];
 
     //create query for username and password match
-    $sql = "SELECT users, password FROM fm_users WHERE users = '$username'";
+    $sql = "SELECT users, password, img_url, firstname, lastname, description, title FROM fm_users WHERE users = '$username'";
 
     //get results from query
     $result = $conn->query($sql);
@@ -32,6 +32,11 @@
       }
     }
     if ($_SESSION['loggedin'] === true) {
+      $_SESSION['firstname'] = $row['firstname'];
+      $_SESSION['lastname'] = $row['lastname'];
+      $_SESSION['img_url'] = $row['img_url'];
+      $_SESSION['description'] = $row['description'];
+      $_SESSION['title'] = $row['title'];
       header('Location: profile.php');
     }
   }
