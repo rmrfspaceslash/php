@@ -26,17 +26,18 @@
       if ($username === $row['users'] && password_verify($password, $row['password'])) {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
+        $_SESSION['firstname'] = $row['firstname'];
+        $_SESSION['lastname'] = $row['lastname'];
+        $_SESSION['img_url'] = $row['img_url'];
+        $_SESSION['description'] = $row['description'];
+        $_SESSION['title'] = $row['title'];
         $_SESSION['fail'] = null;
       }else {
         $_SESSION['fail'] = true;
       }
     }
     if ($_SESSION['loggedin'] === true) {
-      $_SESSION['firstname'] = $row['firstname'];
-      $_SESSION['lastname'] = $row['lastname'];
-      $_SESSION['img_url'] = $row['img_url'];
-      $_SESSION['description'] = $row['description'];
-      $_SESSION['title'] = $row['title'];
+
       header('Location: profile.php');
     }
   }
