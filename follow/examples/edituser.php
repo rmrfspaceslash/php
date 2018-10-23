@@ -108,8 +108,7 @@ if (!isset($_SESSION)) {
 																				<li>
 																				<br/>
 																					<p class="text-dark">Edit your description:<p/>
-																					<textarea rows="4" cols="50" name="description" placeholder="<?php echo $_SESSION['description']; ?>">
-																					</textarea>
+																					<textarea rows="4" cols="50" name="description" placeholder="<?php echo $_SESSION['description']; ?>"></textarea>
 																				</li>
 																			</form>
                                 </ul>
