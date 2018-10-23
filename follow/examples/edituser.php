@@ -85,7 +85,7 @@ if (!isset($_SESSION)) {
                 </div>
                 <!-- Tab panes -->
                 <div class="tab-content following">
-									<h1 class="text-dark md-auto">Edit user settings</h1>
+									<h1 class="text-dark md-auto ml-auto mx-auto">Edit user settings</h1><br/>
                     <div class="tab-pane active" id="follows" role="tabpanel">
                         <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
@@ -93,8 +93,14 @@ if (!isset($_SESSION)) {
 																			<form action="index.html" method="post">
 																				<li>
 																					<input type="text" name="edit_firstname" placeholder="<?php echo $_SESSION['firstname'] ?>">
+																				</li>
+																				<li>
 																					<input type="text" name="edit_lastname" placeholder="<?php echo $_SESSION['lastname'] ?>">
+																				</li>
+																				<li>
 																					<input type="text" name="edit_title" placeholder="<?php echo $_SESSION['title'] ?>">
+																				</li>
+																				<li>
 																					<input type="text" name="edit_description" placeholder="<?php echo $_SESSION['description'] ?>">
 																				</li>
 																			</form>
