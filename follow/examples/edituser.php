@@ -96,15 +96,18 @@ if (!isset($_SESSION)) {
 																					<input type="text" name="edit_firstname" placeholder="<?php echo $_SESSION['firstname']; ?>"> <br/>
 																				</li>
 																				<li>
+																				<Br/>
 																					<p class="text-dark">Edit your lastname:</p>
 																					<input type="text" name="edit_lastname" placeholder="<?php echo $_SESSION['lastname']; ?>"> <br/>
 																				</li>
 																				<li>
+																				<br/>
 																					<p class="text-dark">Edit your title:</p>
 																					<input type="text" name="edit_title" placeholder="<?php echo $_SESSION['title']; ?>"> <br/>
 																				</li>
 																				<li>
-																					<p class="text-dark">Edit your description<p/>
+																				<br/>
+																					<p class="text-dark">Edit your description:<p/>
 																					<textarea rows="4" cols="50" name="description" placeholder="<?php echo $_SESSION['description']; ?>">
 																					</textarea>
 																				</li>
