@@ -84,8 +84,8 @@ if (!isset($_SESSION)) {
                     </div>
                 </div>
                 <!-- Tab panes -->
-                <div class="tab-content following span12">
-									<h1 class="text-dark md-auto ml-auto mx-auto">Edit user settings</h1><br/>
+                <div class="tab-content following">
+									<h1 class="text-dark md-auto ml-auto mx-auto col-md-12">Edit user settings</h1><br/>
                     <div class="tab-pane active" id="follows" role="tabpanel">
                         <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
