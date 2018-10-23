@@ -90,17 +90,21 @@ if (!isset($_SESSION)) {
                         <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
                                 <ul class="list-unstyled follows">
-																			<form class="col-md-12 mx-auto md-auto ml-auto" action="index.html" method="post">
+																			<form class="" action="index.html" method="post">
 																				<li>
+																					Edit your firstname:
 																					<input type="text" name="edit_firstname" placeholder="<?php echo $_SESSION['firstname'] ?>">
 																				</li>
 																				<li>
+																					Edit your lastname:
 																					<input type="text" name="edit_lastname" placeholder="<?php echo $_SESSION['lastname'] ?>">
 																				</li>
 																				<li>
+																					Edit your title:
 																					<input type="text" name="edit_title" placeholder="<?php echo $_SESSION['title'] ?>">
 																				</li>
 																				<li>
+																					Edit your description:
 																					<input type="text" name="edit_description" placeholder="<?php echo $_SESSION['description'] ?>">
 																				</li>
 																			</form>
