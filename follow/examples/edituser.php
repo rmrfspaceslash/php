@@ -104,6 +104,7 @@ if (!isset($_SESSION)) {
 																					<input type="text" name="edit_title" placeholder="<?php echo $_SESSION['title']; ?>"> <br/>
 																				</li>
 																				<li>
+																					<p class="text-dark">Edit your description<p/>
 																					<textarea rows="4" cols="50" name="description" placeholder="<?php echo $_SESSION['description']; ?>">
 																					</textarea>
 																				</li>
