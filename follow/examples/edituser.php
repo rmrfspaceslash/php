@@ -92,19 +92,19 @@ if (!isset($_SESSION)) {
                                 <ul class="list-unstyled follows">
 																			<form class="" action="index.html" method="post">
 																				<li>
-																					Edit your firstname:
+																					Edit your firstname: <br/>
 																					<input type="text" name="edit_firstname" placeholder="<?php echo $_SESSION['firstname'] ?>">
 																				</li>
 																				<li>
-																					Edit your lastname:
+																					Edit your lastname: <br/>
 																					<input type="text" name="edit_lastname" placeholder="<?php echo $_SESSION['lastname'] ?>">
 																				</li>
 																				<li>
-																					Edit your title:
+																					Edit your title: <br/>
 																					<input type="text" name="edit_title" placeholder="<?php echo $_SESSION['title'] ?>">
 																				</li>
 																				<li>
-																					Edit your description:
+																					Edit your description: <br/>
 																					<input type="text" name="edit_description" placeholder="<?php echo $_SESSION['description'] ?>">
 																				</li>
 																			</form>
