@@ -93,22 +93,22 @@ if (!isset($_SESSION)) {
 																			<form class="" action="edituser.php" method="post">
 																				<li>
 																					<p class="text-dark">Edit your firstname:</p>
-																					<input class="form-control" type="text" name="edit_firstname" placeholder="<?php echo $_SESSION['firstname']; ?>"> <br/>
+																					<input class="form-control" type="text" name="edit_firstname" value="<?php echo $_SESSION['firstname']; ?>"> <br/>
 																				</li>
 																				<li>
 																				<Br/>
 																					<p class="text-dark">Edit your lastname:</p>
-																					<input class="form-control" type="text" name="edit_lastname" placeholder="<?php echo $_SESSION['lastname']; ?>"> <br/>
+																					<input class="form-control" type="text" name="edit_lastname" value="<?php echo $_SESSION['lastname']; ?>"> <br/>
 																				</li>
 																				<li>
 																				<br/>
 																					<p class="text-dark">Edit your title:</p>
-																					<input class="form-control" type="text" name="edit_title" placeholder="<?php echo $_SESSION['title']; ?>"> <br/>
+																					<input class="form-control" type="text" name="edit_title" value="<?php echo $_SESSION['title']; ?>"> <br/>
 																				</li>
 																				<li>
 																				<br/>
 																					<p class="text-dark">Edit your description:<p/>
-																					<textarea class="form-control" rows="4" cols="50" name="description" placeholder="<?php echo $_SESSION['description']; ?>"></textarea>
+																					<textarea class="form-control" rows="4" cols="50" name="description" value="<?php echo $_SESSION['description']; ?>"></textarea>
 																				</li>
 																				<li>
 																				<br/>
