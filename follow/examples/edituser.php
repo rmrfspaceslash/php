@@ -110,6 +110,10 @@ if (!isset($_SESSION)) {
 																					<p class="text-dark">Edit your description:<p/>
 																					<textarea class="form-control" rows="4" cols="50" name="description" placeholder="<?php echo $_SESSION['description']; ?>"></textarea>
 																				</li>
+																				<li>
+																				<br/>
+																					<input class="btn btn-primary" type="submit" name="submit" value="Confirm">
+																				</li>
 																			</form>
                                 </ul>
                             </div>
