@@ -112,7 +112,7 @@ if (!isset($_SESSION)) {
 																				</li>
 																				<li>
 																				<br/>
-																					<input class="btn btn-primary btn-large" type="submit" name="submit" value="Confirm">
+																					<input class="btn btn-primary" type="submit" name="submit" value="Confirm">
 																				</li>
 																			</form>
                                 </ul>
