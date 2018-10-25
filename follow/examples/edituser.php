@@ -11,7 +11,7 @@ if (!isset($_SESSION)) {
 //modify fm_users to add title -> $session[title]
 //modify fm_users to add description-> $session[description]
 
-if ($_SERVER('REQUEST_METHOD') === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	//get database connection
 	require('db.php');
 
