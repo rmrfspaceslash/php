@@ -20,25 +20,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if (isset($_POST['edit_firstname'])) {
 		$firstname = $_POST['edit_firstname'];
 		$sql = "UPDATE fm_users SET firstname = '$firstname' WHERE users='$email'";
-		$conn->exec($sql);
+		$conn->query($sql);
 	}
 
 	if (isset($_POST['edit_lastname'])) {
 		$lastname = $_POST['edit_lastname'];
 		$sql = "UPDATE fm_users SET lastname = '$lastname' WHERE users='$email'";
-		$conn->exec($sql);
+		$conn->query($sql);
 	}
 
 	if (isset($_POST['edit_title'])) {
 		$title = $_POST['edit_title'];
 		$sql = "UPDATE fm_users SET title = '$title' WHERE users='$email'";
-		$conn->exec($sql);
+		$conn->query($sql);
 	}
 
 	if (isset($_POST['edit_description'])) {
 	$description = $_POST['edit_description'];
 	$sql = "UPDATE fm_users SET description = '$description' WHERE users='$email'";
-  $conn->exec($sql);
+  $conn->query($sql);
 	}
 }
 
