@@ -13,8 +13,10 @@ require('db.php');
 //modify fm_users to add title -> $session[title]
 //modify fm_users to add description-> $session[description]
 
+$email = $_SESSION['users'];
+
 //update session variables
-$sql = "SELECT password, firstname, lastname, description, title FROM fm_users WHERE users = '$username'";
+$sql = "SELECT password, firstname, lastname, description, title FROM fm_users WHERE users = '$email'";
 
 //get results from query
 $result = $conn->query($sql);
@@ -30,8 +32,6 @@ while ($row = $result->fetch_assoc()) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	//get database connection
 
-
-	$email = $_SESSION['users'];
 
 	if (isset($_POST['edit_firstname'])) {
 		$firstname = $_POST['edit_firstname'];
