@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	//get database connection
 	require('db.php');
 
-	$email = $_SESSION['email'];
+	$email = $_SESSION['users'];
 
 	if (isset($_POST['firstname'])) {
 		$firstname = $_POST['firstname'];

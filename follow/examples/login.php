@@ -31,7 +31,7 @@
         $_SESSION['img_url'] = $row['img_url'];
         $_SESSION['description'] = $row['description'];
         $_SESSION['title'] = $row['title'];
-        $_SESSION['email'] = $row['email'];
+        $_SESSION['users'] = $row['users'];
         $_SESSION['fail'] = null;
       }else {
         $_SESSION['fail'] = true;
