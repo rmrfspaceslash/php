@@ -57,7 +57,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $conn->query($sql);
 	}
 
+	//update session variables
+	$sql = "SELECT password, firstname, lastname, description, title FROM fm_users WHERE users = '$email'";
 
+	//get results from query
+	$result = $conn->query($sql);
+
+	//extract results from query
+	while ($row = $result->fetch_assoc()) {
+			$_SESSION['firstname'] = $row['firstname'];
+			$_SESSION['lastname'] = $row['lastname'];
+			$_SESSION['description'] = $row['description'];
+			$_SESSION['title'] = $row['title'];
+	}
 }
 
  ?>
