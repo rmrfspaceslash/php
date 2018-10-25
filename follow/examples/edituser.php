@@ -11,6 +11,8 @@ if (!isset($_SESSION)) {
 //modify fm_users to add title -> $session[title]
 //modify fm_users to add description-> $session[description]
 
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	//get database connection
 	require('db.php');
@@ -39,6 +41,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$description = $_POST['edit_description'];
 	$sql = "UPDATE fm_users SET description = '$description' WHERE users='$email'";
   $conn->query($sql);
+	}
+
+	//update session variables
+	$sql = "SELECT users, password, img_url, firstname, lastname, description, title FROM fm_users WHERE users = '$username'";
+
+	//get results from query
+	$result = $conn->query($sql);
+
+	//extract results from query and set login variable if succeed else error
+	while ($row = $result->fetch_assoc()) {
+			$_SESSION['firstname'] = $row['firstname'];
+			$_SESSION['lastname'] = $row['lastname'];
+			$_SESSION['description'] = $row['description'];
+			$_SESSION['title'] = $row['title'];
 	}
 }
 
