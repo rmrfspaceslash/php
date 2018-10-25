@@ -10,6 +10,38 @@ if (!isset($_SESSION)) {
 //set session variables for first name and last name and img_url
 //modify fm_users to add title -> $session[title]
 //modify fm_users to add description-> $session[description]
+
+if ($_SERVER('REQUEST_METHOD') === 'POST') {
+	//get database connection
+	require('dbconnect.php');
+
+	$email = $_SESSION['email']
+
+	if (isset($_POST['firstname']) {
+		$firstname = $_POST['firstname'];
+		$sql = "UPDATE users SET firstname = '$firstname' WHERE email='$email'";
+		$result=$conn->query($sql);
+	}
+
+	if (isset($_POST['lastname'])) {
+		$lastname = $_POST['lastname'];
+		$sql = "UPDATE users SET lastname = '$lastname' WHERE email='$email'";
+		$result=$conn->query($sql);
+	}
+
+	if (isset($_POST['title'])) {
+		$title = $_POST['title'];
+		$sql = "UPDATE users SET title = '$title' WHERE email='$email'";
+		$result=$conn->query($sql);
+	}
+
+	if (isset($_POST['description'])) {
+	$description = $_POST['description'];
+	$sql = "UPDATE users SET description = '$description' WHERE email='$email'";
+  $result=$conn->query($sql);
+	}
+}
+
  ?>
 
 
