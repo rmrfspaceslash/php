@@ -5,6 +5,8 @@ if (!isset($_SESSION)) {
 	session_start();
 }
 
+require('db.php');
+
 //Create session username somewhere (session email)
 //modify fm-users table to include first name and last name and img_url
 //set session variables for first name and last name and img_url
@@ -27,7 +29,7 @@ while ($row = $result->fetch_assoc()) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	//get database connection
-	require('db.php');
+
 
 	$email = $_SESSION['users'];
 
