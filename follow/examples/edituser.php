@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	$email = $_SESSION['email'];
 
-	if (isset($_POST['firstname']) {
+/*	if (isset($_POST['firstname']) {
 		$firstname = $_POST['firstname'];
 		$sql = "UPDATE users SET firstname = '$firstname' WHERE email='$email'";
 		$result=$conn->query($sql);
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$description = $_POST['description'];
 	$sql = "UPDATE users SET description = '$description' WHERE email='$email'";
   $result=$conn->query($sql);
-	}
+} */
 }
 
  ?>
