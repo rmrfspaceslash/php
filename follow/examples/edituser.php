@@ -189,7 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 								<div class="row">
 										<div class="col-md-6 ml-auto mr-auto">
 												<ul class="list-unstyled follows">
-													<?php $sql = "SELECT password, firstname, lastname, description, title FROM fm_users"; ?>
+													<?php $sql = "SELECT firstname, lastname, title FROM fm_users"; ?>
 													<?php $result = $conn->query($sql); ?>
 													<?php while ($rowdb = $result->fetch_assoc()) { ?>
 														<li>
