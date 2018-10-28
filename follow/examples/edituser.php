@@ -207,7 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 																			<span class="form-check-sign"></span>
 																	</label>
 															</div>
-																		</div>
+														</div>
 																</div>
 														</li>
 													<?php } ?>
