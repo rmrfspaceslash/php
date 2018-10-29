@@ -76,7 +76,7 @@ require('db.php');
 								<div class="row">
 										<div class="col-md-6 ml-auto mr-auto">
 												<ul class="list-unstyled follows">
-													<?php $sql = "SELECT firstname, lastname, img_url FROM fm_users"; ?>
+													<?php $sql = "SELECT firstname, lastname, img_url, title FROM fm_users"; ?>
 													<?php $result = $conn->query($sql); ?>
 													<?php while ($rowdb = $result->fetch_assoc()) { ?>
 														<li>
