@@ -123,9 +123,9 @@ require('db.php');
 															$followerid = $rowdb3['followid'];
 															$DELETE = "DELETE FROM fm_follows WHERE userid = '$userid' AND followid = '$followerid'";
 															$conn->query($DELETE);
-															 echo "<meta http-equiv='refresh' content='0'>";
 														}
 													}
+													echo "<meta http-equiv='refresh' content='0'>"
 													?>
 														<hr />
 												</ul>
