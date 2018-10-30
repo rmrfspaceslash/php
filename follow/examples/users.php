@@ -7,6 +7,25 @@ if (!isset($_SESSION)) {
 
 require('db.php');
 
+$sql3 = "SELECT firstname, lastname, img_url, title, followid FROM fm_users";
+$results2 = $conn->query($sql3);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+while ($rowdb3 = $results2->fetch_assoc()) {
+	$tmpuser = $rowdb3['firstname'];
+	if ($_POST["$tmpuser"] == "Yes") {
+		$userid = $_SESSION['userid'];
+		$followerid = $rowdb3['followid'];
+		$INSERT = "INSERT IGNORE INTO fm_follows (userid, followid) VALUES ('$userid','$followerid')";
+		$conn->query($INSERT);
+	}else {
+		$userid = $_SESSION['userid'];
+		$followerid = $rowdb3['followid'];
+		$DELETE = "DELETE FROM fm_follows WHERE userid = '$userid' AND followid = '$followerid'";
+		$conn->query($DELETE);
+	}
+}
+}
+
 ?>
 
 
@@ -109,24 +128,7 @@ require('db.php');
 											<input type="submit" name="submit" value="Follow Checked users">
 											</form>
 												<?php
-													$sql3 = "SELECT firstname, lastname, img_url, title, followid FROM fm_users";
-													$results2 = $conn->query($sql3);
-													if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-													while ($rowdb3 = $results2->fetch_assoc()) {
-														$tmpuser = $rowdb3['firstname'];
-														if ($_POST["$tmpuser"] == "Yes") {
-															$userid = $_SESSION['userid'];
-															$followerid = $rowdb3['followid'];
-															$INSERT = "INSERT IGNORE INTO fm_follows (userid, followid) VALUES ('$userid','$followerid')";
-															$conn->query($INSERT);
-														}else {
-															$userid = $_SESSION['userid'];
-															$followerid = $rowdb3['followid'];
-															$DELETE = "DELETE FROM fm_follows WHERE userid = '$userid' AND followid = '$followerid'";
-															$conn->query($DELETE);
-														}
-													}
-												}
+
 
 													?>
 														<hr />
