@@ -95,7 +95,7 @@ require('db.php');
 																				$results = $conn->query($sql2);
 																				while ($rowdb2 = $results->fetch_assoc()) {
 																					if ($rowdb2['followid'] == $rowdb['followid']) {
-																			 ?> checked <?php } } ?>>
+																			 ?> checked > <?php } } ?>
 																			<span class="form-check-sign"></span>
 																	</label>
 															</div>
