@@ -90,14 +90,21 @@ require('db.php');
 																		<div class="col-md-3 col-sm-2  ml-auto mr-auto">
 								<div class="form-check">
 																	<label class="form-check-label">
-																			<input class="form-check-input" type="checkbox" value="">
+																			<input class="form-check-input" type="checkbox" value="" <?php
+																				$sql2 = "SELECT userid, followid FROM fm_follows WHERE userid = $_SESSION['userid']";
+																				$results = $conn->query($sql2);
+																				while ($rowdb2 = $results->fetch_assoc()) {
+																					if ($rowdb2['followid'] == $rowdb['followid']) {
+																			 ?> checked <?php } } ?>>
 																			<span class="form-check-sign"></span>
 																	</label>
 															</div>
 														</div>
 																</div>
 														</li>
-													<?php } ?>
+													<?php
+													}
+													?>
 														<hr />
 												</ul>
 										</div>
