@@ -97,7 +97,7 @@ require('db.php');
 																				$results = $conn->query($sql2);
 																				while ($rowdb2 = $results->fetch_assoc()) {
 																					if ($_SESSION['userid'] == $rowdb2['userid'] && $rowdb2['followid'] == $rowdb['followid']) {
-																			 ?>checked><?php}else{?>><?php } } ?>
+																			 ?>checked><?php } } ?>
 																			<span class="form-check-sign"></span>
 																	</label>
 																</form>
@@ -110,7 +110,8 @@ require('db.php');
 													$sql3 = "SELECT firstname, lastname, img_url, title, followid FROM fm_users";
 													$results2 = $conn->query($sql3);
 													while ($rowdb3 = $results2->fetch_assoc()) {
-														if ($_POST["$rowdb3/"['firstname']/"" != null) {
+														$tmpuser = $rowdb3['firstname'];
+														if ($_POST["$tmpuser"] != null) {
 															$userid = $_SESSION['userid'];
 															$followerid = $rowdb3['followid'];
 															$INSERT = "INSERT INTO fm_follows (userid, followid) VALUES ('$userid','$followerid')";
