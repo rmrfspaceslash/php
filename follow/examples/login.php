@@ -16,7 +16,7 @@
     $password = $_POST['password'];
 
     //create query for username and password match
-    $sql = "SELECT users, password, img_url, firstname, lastname, description, title FROM fm_users WHERE users = '$username'";
+    $sql = "SELECT userid, users, password, img_url, firstname, lastname, description, title FROM fm_users WHERE users = '$username'";
 
     //get results from query
     $result = $conn->query($sql);
@@ -32,6 +32,7 @@
         $_SESSION['description'] = $row['description'];
         $_SESSION['title'] = $row['title'];
         $_SESSION['users'] = $row['users'];
+        $_SESSION['userid'] = $row['userid'];
         $_SESSION['fail'] = null;
       }else {
         $_SESSION['fail'] = true;
