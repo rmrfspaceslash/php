@@ -125,7 +125,7 @@ require('db.php');
 															$conn->query($DELETE);
 														}
 													}
-													
+
 													?>
 														<hr />
 												</ul>
