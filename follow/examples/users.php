@@ -106,7 +106,7 @@ require('db.php');
 																</div>
 														</li>
 													<?php
-													}
+													} 
 													$sql3 = "SELECT firstname, lastname, img_url, title, followid FROM fm_users";
 													$results2 = $conn->query($sql3);
 													while ($rowdb3 = $results2->fetch_assoc()) {
