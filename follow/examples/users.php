@@ -91,7 +91,8 @@ require('db.php');
 								<div class="form-check">
 																	<label class="form-check-label">
 																			<input class="form-check-input" type="checkbox" value="" <?php
-																				$sql2 = "SELECT userid, followid FROM fm_follows WHERE userid = $_SESSION['userid']";
+																				$userid = $_SESSION['userid'];
+																				$sql2 = "SELECT userid, followid FROM fm_follows WHERE userid = '$userid'";
 																				$results = $conn->query($sql2);
 																				while ($rowdb2 = $results->fetch_assoc()) {
 																					if ($rowdb2['followid'] == $rowdb['followid']) {
