@@ -98,7 +98,6 @@ require('db.php');
 																				while ($rowdb2 = $results->fetch_assoc()) {
 																					if ($_SESSION['userid'] == $rowdb2['userid'] && $rowdb2['followid'] == $rowdb['followid']) { $marker = true;
 																			 ?>checked><?php } } if ($marker == false) { ?> > <?php } ?>
-																			 <input type="submit" name="submit" value="Follow Selected Users">
 																			<span class="form-check-sign"></span>
 																	</label>
 																</form>
