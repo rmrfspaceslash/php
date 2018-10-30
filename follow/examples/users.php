@@ -111,6 +111,7 @@ require('db.php');
 												<?php
 													$sql3 = "SELECT firstname, lastname, img_url, title, followid FROM fm_users";
 													$results2 = $conn->query($sql3);
+													if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 													while ($rowdb3 = $results2->fetch_assoc()) {
 														$tmpuser = $rowdb3['firstname'];
 														if ($_POST["$tmpuser"] == "Yes") {
@@ -125,6 +126,7 @@ require('db.php');
 															$conn->query($DELETE);
 														}
 													}
+												}
 
 													?>
 														<hr />
