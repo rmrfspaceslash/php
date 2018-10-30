@@ -78,7 +78,7 @@ require('db.php');
 												<ul class="list-unstyled follows">
 													<?php $sql = "SELECT firstname, lastname, img_url, title, followid FROM fm_users"; ?>
 													<?php $result = $conn->query($sql); ?>
-													<?php while ($rowdb = $result->fetch_assoc()) { ?>
+													<?php while ($rowdb = $result->fetch_assoc()) { $olduserid = $rowdb['userid']; ?>
 														<li>
 																<div class="row">
 																		<div class="col-md-2 col-sm-2 ml-auto mr-auto">
@@ -97,7 +97,7 @@ require('db.php');
 																				$results = $conn->query($sql2);
 																				while ($rowdb2 = $results->fetch_assoc()) {
 																					if ($_SESSION['userid'] == $rowdb2['userid'] && $rowdb2['followid'] == $rowdb['followid']) {
-																			 ?>checked><?php }elseif ($_SESSION['userid'] == $rowdb2['userid'] && $rowdb2['followid'] != $rowdb['followid']) {?>><?php } } ?>
+																			 ?>checked><?php }elseif ($_SESSION['userid'] == $rowdb2['userid'] && $rowdb2['followid'] != $rowdb['followid'] && $rowdb2['followid'] != $olduerid) {?>><?php } } ?>
 																			<span class="form-check-sign"></span>
 																	</label>
 																</form>
