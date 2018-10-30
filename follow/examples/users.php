@@ -76,6 +76,7 @@ require('db.php');
 								<div class="row">
 										<div class="col-md-6 ml-auto mr-auto">
 												<ul class="list-unstyled follows">
+													<form action="" method="post">
 													<?php $sql = "SELECT firstname, lastname, img_url, title, followid FROM fm_users"; ?>
 													<?php $result = $conn->query($sql); ?>
 													<?php while ($rowdb = $result->fetch_assoc()) { $olduserid = $rowdb['followid']; $marker = false; ?>
@@ -89,9 +90,8 @@ require('db.php');
 																		</div>
 																		<div class="col-md-3 col-sm-2  ml-auto mr-auto">
 								<div class="form-check">
-																	<form action="" method="post">
 																	<label class="form-check-label">
-																			<input class="form-check-input" name="<?php echo $rowdb['firstname']; ?>" type="checkbox" value="" <?php
+																			<input class="form-check-input" name="<?php echo $rowdb['firstname']; ?>" type="checkbox" value="Yes" <?php
 																				$userid = $_SESSION['userid'];
 																				$sql2 = "SELECT userid, followid FROM fm_follows WHERE userid = '$userid'";
 																				$results = $conn->query($sql2);
@@ -100,22 +100,29 @@ require('db.php');
 																			 ?>checked><?php } } if ($marker == false) { ?> > <?php } ?>
 																			<span class="form-check-sign"></span>
 																	</label>
-																</form>
 															</div>
 														</div>
 																</div>
 														</li>
 													<?php
-													} 
+													} ?>
+											<input type="submit" name="submit" value="Follow Checked users">
+											</form>
+												<?php
 													$sql3 = "SELECT firstname, lastname, img_url, title, followid FROM fm_users";
 													$results2 = $conn->query($sql3);
 													while ($rowdb3 = $results2->fetch_assoc()) {
 														$tmpuser = $rowdb3['firstname'];
-														if ($_POST["$tmpuser"] != null) {
+														if ($_POST["$tmpuser"] == "Yes") {
 															$userid = $_SESSION['userid'];
 															$followerid = $rowdb3['followid'];
-															$INSERT = "INSERT INTO fm_follows (userid, followid) VALUES ('$userid','$followerid')";
-															$conn-query($INSERT);
+															$INSERT = "INSERT IGNORE INTO fm_follows (userid, followid) VALUES ('$userid','$followerid')";
+															$conn->query($INSERT);
+														}else {
+															$userid = $_SESSION['userid'];
+															$followerid = $rowdb3['followid'];
+															$DELETE = "DELETE FROM fm_follows WHERE userid = '$userid' AND followid = '$followerid'";
+															$conn->query($DELETE);
 														}
 													}
 													?>
