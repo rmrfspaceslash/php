@@ -107,6 +107,16 @@ require('db.php');
 														</li>
 													<?php
 													}
+													$sql3 = "SELECT firstname, lastname, img_url, title, followid FROM fm_users";
+													$results2 = $conn->query($sql3);
+													while ($rowdb3 = $results2->fetch_assoc()) {
+														if ($_POST["$rowdb3/"['firstname']/"" != null) {
+															$userid = $_SESSION['userid'];
+															$followerid = $rowdb3['followid'];
+															$INSERT = "INSERT INTO fm_follows (userid, followid) VALUES ('$userid','$followerid')";
+															$conn-query($INSERT);
+														}
+													}
 													?>
 														<hr />
 												</ul>
