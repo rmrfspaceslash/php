@@ -97,7 +97,7 @@ require('db.php');
 																				$results = $conn->query($sql2);
 																				while ($rowdb2 = $results->fetch_assoc()) {
 																					if ($_SESSION['userid'] == $rowdb2['userid'] && $rowdb2['followid'] == $rowdb['followid']) {
-																			 ?>checked><?php }elseif ($_SESSION['userid'] == $rowdb2['userid'] && $rowdb2['followid'] != $rowdb['followid'] && $rowdb2['followid'] != $olduerid) {?>><?php } } ?>
+																			 ?>checked><?php }elseif ($_SESSION['userid'] == $rowdb2['userid'] && $rowdb2['followid'] != $rowdb['followid'] && $rowdb2['followid'] != $olduserid) {?>><?php } } ?>
 																			<span class="form-check-sign"></span>
 																	</label>
 																</form>
