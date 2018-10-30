@@ -125,7 +125,7 @@ require('db.php');
 															$conn->query($DELETE);
 														}
 													}
-													echo "<meta http-equiv='refresh' content='0'>"
+													
 													?>
 														<hr />
 												</ul>
