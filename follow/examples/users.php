@@ -78,7 +78,7 @@ require('db.php');
 												<ul class="list-unstyled follows">
 													<?php $sql = "SELECT firstname, lastname, img_url, title, followid FROM fm_users"; ?>
 													<?php $result = $conn->query($sql); ?>
-													<?php while ($rowdb = $result->fetch_assoc()) { $olduserid = $rowdb['userid']; ?>
+													<?php while ($rowdb = $result->fetch_assoc()) { $olduserid = $rowdb['followid']; ?>
 														<li>
 																<div class="row">
 																		<div class="col-md-2 col-sm-2 ml-auto mr-auto">
