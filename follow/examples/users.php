@@ -125,7 +125,7 @@ while ($rowdb3 = $results2->fetch_assoc()) {
 														</li>
 													<?php
 													} ?>
-											<input type="submit" name="submit" value="Follow Checked users">
+											<input class="btn-primary btn-large btn" type="submit" name="submit" value="Follow Checked users">
 											</form>
 												<?php
 
