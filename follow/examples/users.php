@@ -116,7 +116,7 @@ while ($rowdb3 = $results2->fetch_assoc()) {
 																				$results = $conn->query($sql2);
 																				while ($rowdb2 = $results->fetch_assoc()) {
 																					if ($_SESSION['userid'] == $rowdb2['userid'] && $rowdb2['followid'] == $rowdb['followid']) { $marker = true;
-																			 ?>checked class="form-check-input bg-black"><?php } } if ($marker == false) { ?> class="form-check-input"> <?php } ?>
+																			 ?>checked class="form-check-input" style="color:green;"><?php } } if ($marker == false) { ?> class="form-check-input"> <?php } ?>
 																			<span class="form-check-sign"></span>
 																	</label>
 															</div>
