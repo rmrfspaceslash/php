@@ -7,23 +7,31 @@ if (!isset($_SESSION)) {
 
 require('db.php');
 
+//get database query
 $sql3 = "SELECT firstname, lastname, img_url, title, followid FROM fm_users";
 $results2 = $conn->query($sql3);
+//check to see if post information was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-while ($rowdb3 = $results2->fetch_assoc()) {
-	$tmpuser = $rowdb3['firstname'];
-	if ($_POST["$tmpuser"] == "Yes") {
-		$userid = $_SESSION['userid'];
-		$followerid = $rowdb3['followid'];
-		$INSERT = "INSERT IGNORE INTO fm_follows (userid, followid) VALUES ('$userid','$followerid')";
-		$conn->query($INSERT);
-	}else {
-		$userid = $_SESSION['userid'];
-		$followerid = $rowdb3['followid'];
-		$DELETE = "DELETE FROM fm_follows WHERE userid = '$userid' AND followid = '$followerid'";
-		$conn->query($DELETE);
+	//grab results from sql query
+	while ($rowdb3 = $results2->fetch_assoc()) {
+		$tmpuser = $rowdb3['firstname'];
+		//every dynamically created <input> is named after the first name of the user. userid should be used instead
+		if ($_POST["$tmpuser"] == "Yes") { //add people to the database
+			//get logged in users credential (userid)
+			$userid = $_SESSION['userid'];
+			//get the followid of the user to be followed
+			$followerid = $rowdb3['followid'];
+			//Insert into the follows table the logged in users userid and the following users followid
+			$INSERT = "INSERT IGNORE INTO fm_follows (userid, followid) VALUES ('$userid','$followerid')";
+			$conn->query($INSERT);
+		}else { //remove people form the database
+			$userid = $_SESSION['userid']; //refer to comments above
+			$followerid = $rowdb3['followid']; //refer to comments above
+			//Remove the logged in users userid and the corresponding followid
+			$DELETE = "DELETE FROM fm_follows WHERE userid = '$userid' AND followid = '$followerid'";
+			$conn->query($DELETE);
+		}
 	}
-}
 }
 
 ?>
