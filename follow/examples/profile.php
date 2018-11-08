@@ -114,7 +114,7 @@ require('db.php');
 													$userinfo = "SELECT username, firstname, lastname, title, img_url, followid FROM fm_users";
 													$result2 = $conn->query($userinfo);
 													while ($rowdb2 = $result2->fetch_assoc()) {
-														while ($_SESSION['userid'] == $rowdb2['userid']) {
+														while ($_SESSION['userid'] == $rowdb['userid']) {
 												?>
 												<li>
 														<div class="row">
