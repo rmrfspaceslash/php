@@ -119,15 +119,15 @@ require('db.php');
 												<li>
 														<div class="row">
 																<div class="col-md-2 col-sm-2 ml-auto mr-auto">
-																		<img src="<?php echo $rowdb['img_url']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+																		<img src="<?php echo $rowdb2['img_url']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
 																</div>
 																<div class="col-md-7 col-sm-4  ml-auto mr-auto">
-																		<h6><?php echo $rowdb['firstname'] . " " . $rowdb['lastname']; ?><br/><small><?php echo $rowdb['title']; ?></small></h6>
+																		<h6><?php echo $rowdb2['firstname'] . " " . $rowdb2['lastname']; ?><br/><small><?php echo $rowdb2['title']; ?></small></h6>
 																</div>
 																<div class="col-md-3 col-sm-2  ml-auto mr-auto">
 						<div class="form-check">
 															<label class="form-check-label">
-																	<input class="form-check-input" name="<?php echo $rowdb['firstname']; ?>" type="checkbox" value="Yes" checked>
+																	<input class="form-check-input" name="<?php echo $rowdb2['firstname']; ?>" type="checkbox" value="Yes" checked>
 																	<span class="form-check-sign"></span>
 															</label>
 													</div>
