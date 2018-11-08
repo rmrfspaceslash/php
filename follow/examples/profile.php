@@ -125,8 +125,8 @@ if (!isset($_SESSION)) {
 																$sql2 = "SELECT userid, followid FROM fm_follows WHERE userid = '$userid'";
 																$results = $conn->query($sql2);
 																while ($rowdb2 = $results->fetch_assoc()) {
-																	if ($_SESSION['userid'] == $rowdb2['userid'] && $rowdb2['followid'] == $rowdb['followid']) { $marker = true;
-																	<input class="form-check-input" name="<?php echo $rowdb['firstname']; ?>" type="checkbox" value="Yes" checked> } } ?>
+																	if ($_SESSION['userid'] == $rowdb2['userid'] && $rowdb2['followid'] == $rowdb['followid']) { $marker = true; ?>
+																	<input class="form-check-input" name="<?php echo $rowdb['firstname']; ?>" type="checkbox" value="Yes" checked><?php } } ?>
 																	<span class="form-check-sign"></span>
 															</label>
 													</div>
