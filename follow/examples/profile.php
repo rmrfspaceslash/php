@@ -135,6 +135,7 @@ require('db.php');
 														</div>
 												</li>
 											<?php
+										}
 											} ?>
                     </div>
                     <div class="tab-pane text-center" id="following" role="tabpanel">
