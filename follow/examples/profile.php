@@ -111,7 +111,7 @@ require('db.php');
 											<?php $sql = "SELECT userid, followid FROM fm_follows WHERE userid = '$userid'"; ?>
 											<?php $result = $conn->query($sql); ?>
 											<?php while ($rowdb = $result->fetch_assoc()) {
-													$userinfo = "SELECT username, firstname, lastname, title, img_url FROM fm_users";
+													$userinfo = "SELECT username, firstname, lastname, title, img_url, followid FROM fm_users";
 													$result2 = $conn->query($userinfo);
 													while ($rowdb2 = $result2->fetch_assoc()) {
 														while ($rowdb['followid'] == $rowdb2['followid']) {
