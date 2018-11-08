@@ -108,9 +108,14 @@ require('db.php');
                 <!-- Tab panes -->
 								<div class="tab-content following">
                     <div class="tab-pane active" id="follows" role="tabpanel">
-											<?php $sql = "SELECT userid, followid FROM fm_follows WHERE userid = '$userid'" ?>
+											<?php $sql = "SELECT userid, followid FROM fm_follows WHERE userid = '$userid'"; ?>
 											<?php $result = $conn->query($sql); ?>
-											<?php while ($rowdb = $result->fetch_assoc()) { ?>
+											<?php while ($rowdb = $result->fetch_assoc()) {
+													$userinfo = "SELECT username, firstname, lastname, title, img_url FROM fm_users";
+													$result2 = $conn->query($userinfo);
+													while ($rowdb2 = $result2->fetch_assoc()) {
+														while ($rowdb['followid'] == $rowdb2['followid']) {
+												?>
 												<li>
 														<div class="row">
 																<div class="col-md-2 col-sm-2 ml-auto mr-auto">
@@ -130,6 +135,8 @@ require('db.php');
 														</div>
 												</li>
 											<?php
+													}
+												}
 											} ?>
                     </div>
                     <div class="tab-pane text-center" id="following" role="tabpanel">
