@@ -108,35 +108,6 @@ require('db.php');
                 <!-- Tab panes -->
 								<div class="tab-content following">
                     <div class="tab-pane active" id="follows" role="tabpanel">
-											<?php $info = "SELECT username, firstname, img_url, title, lastname FROM fm_users";
-												$result2 = $conn->query($info);
-												while ($rowdb2 = $result2->fetch_assoc()) {
-											 ?>
-											<?php $sql = "SELECT userid, followid FROM fm_follows WHERE userid = '$userid'"; ?>
-											<?php $result = $conn->query($sql); ?>
-											<?php while ($rowdb = $result->fetch_assoc()) {
-												?>
-												<li>
-														<div class="row">
-																<div class="col-md-2 col-sm-2 ml-auto mr-auto">
-																		<img src="<?php echo $rowdb2['img_url']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-																</div>
-																<div class="col-md-7 col-sm-4  ml-auto mr-auto">
-																		<h6><?php echo $rowdb2['firstname'] . " " . $rowdb2['lastname']; ?><br/><small><?php echo $rowdb2['title']; ?></small></h6>
-																</div>
-																<div class="col-md-3 col-sm-2  ml-auto mr-auto">
-						<div class="form-check">
-															<label class="form-check-label">
-																	<input class="form-check-input" name="<?php echo $rowdb2['firstname']; ?>" type="checkbox" value="Yes" checked>
-																	<span class="form-check-sign"></span>
-															</label>
-													</div>
-												</div>
-														</div>
-												</li>
-											<?php
-										}
-											} ?>
                     </div>
                     <div class="tab-pane text-center" id="following" role="tabpanel">
                         <h3 class="text-muted">Not following anyone yet :(</h3>
