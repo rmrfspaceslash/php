@@ -110,7 +110,7 @@ require('db.php');
                     <div class="tab-pane active" id="follows" role="tabpanel">
 											<?php $info = "SELECT username, firstname, img_url, title, lastname FROM fm_users";
 												$result2 = $conn->query($info);
-												while ($rowdb2 = $result2->fetch_assoc())) {
+												while ($rowdb2 = $result2->fetch_assoc()) {
 											 ?>
 											<?php $sql = "SELECT userid, followid FROM fm_follows WHERE userid = '$userid'"; ?>
 											<?php $result = $conn->query($sql); ?>
