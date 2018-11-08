@@ -72,15 +72,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					<span class="navbar-toggler-bar"></span>
 					<span class="navbar-toggler-bar"></span>
 	            </button>
-	            <a class="navbar-brand" href="#">Come with me </a>
+	            <a class="navbar-brand" href="#">Home</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
 	                <li class="nav-item">
-	                    <a href="login.php" class="nav-link">And you'll see</a>
+	                    <a href="login.php" class="nav-link">Login</a>
 	                </li>
 	                <li class="nav-item">
-	                    <a href="#" target="_blank" class="nav-link">A World of
+	                    <a href="#" target="_blank" class="nav-link">
 												<?php echo $_SESSION['username']; ?>
 											</a>
 	                </li>
