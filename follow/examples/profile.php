@@ -108,9 +108,9 @@ require('db.php');
                 <!-- Tab panes -->
 								<div class="tab-content following">
                     <div class="tab-pane active" id="follows" role="tabpanel">
-											<?php $sql = "SELECT firstname, lastname, img_url, title, followid FROM fm_users"; ?>
+											<?php $sql = "SELECT userid, followid FROM fm_follows WHERE userid = '$userid'" ?>
 											<?php $result = $conn->query($sql); ?>
-											<?php while ($rowdb = $result->fetch_assoc()) { $olduserid = $rowdb['followid']; $marker = false; ?>
+											<?php while ($rowdb = $result->fetch_assoc()) { ?>
 												<li>
 														<div class="row">
 																<div class="col-md-2 col-sm-2 ml-auto mr-auto">
@@ -122,14 +122,7 @@ require('db.php');
 																<div class="col-md-3 col-sm-2  ml-auto mr-auto">
 						<div class="form-check">
 															<label class="form-check-label">
-																<?php
-																$userid = $_SESSION['userid'];
-																$sql2 = "SELECT userid, followid FROM fm_follows WHERE userid = '$userid'";
-																$results = $conn->query($sql2);
-																$markernow = true;
-																while ($rowdb2 = $results->fetch_assoc()) {
-																	if ($markernow) { $marker = true; ?>
-																	<input class="form-check-input" name="<?php echo $rowdb['firstname']; ?>" type="checkbox" value="Yes" checked><?php } } ?>
+																	<input class="form-check-input" name="<?php echo $rowdb['firstname']; ?>" type="checkbox" value="Yes" checked>
 																	<span class="form-check-sign"></span>
 															</label>
 													</div>
