@@ -50,16 +50,16 @@ require('db.php');
 					<span class="navbar-toggler-bar"></span>
 					<span class="navbar-toggler-bar"></span>
 	            </button>
-	            <a class="navbar-brand" href="#">Home</a>
+	            <a class="navbar-brand" href="landing.php">Home</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
 	                <li class="nav-item">
-	                    <a href="login.php" class="nav-link">Login</a>
+	                    <a href="users.php" class="nav-link">Follow People</a>
 	                </li>
 	                <li class="nav-item">
-	                    <a href="#" target="_blank" class="nav-link">
-												<?php echo $_SESSION['username']; ?>
+	                    <a href="profile.php" target="_blank" class="nav-link">
+												<?php echo $_SESSION['firstname']; . 's Profile' ?>
 											</a>
 	                </li>
 									<li>
