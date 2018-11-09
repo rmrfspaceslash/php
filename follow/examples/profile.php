@@ -132,10 +132,28 @@ require('db.php');
 										<?php } ?>
                     </div>
                     <div class="tab-pane text-center" id="following" role="tabpanel">
-											<?php if (!$following) { ?>
-                        <h3 class="text-muted">Not following anyone yet :(</h3>
+											<?php $userid = $_SESSION['userid']; ?>
+											<?php $sql = "SELECT * FROM fm_follows, fm_users WHERE fm_follows.followid = $userid AND fm_follows.userid = fm_users.userid"; ?>
+											<?php $result = $conn->query($sql); ?>
+											<?php while ($rowdb = $result->fetch_assoc()) { ?>
+												<ul class="list-unstyled follows">
+														<li>
+																<div class="row">
+																		<div class="col-md-2 col-sm-2 ml-auto mr-auto">
+																				<img src="<?php echo $rowdb['img_url']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+																		</div>
+																		<div class="col-md-7 col-sm-4  ml-auto mr-auto">
+																				<h6><?php echo $rowdb['firstname']; ?><br/><small><?php echo $rowdb['title']; ?></small></h6>
+																		</div>
+																		<div class="col-md-3 col-sm-2  ml-auto mr-auto">
+								<div class="form-check">
+															</div>
+																		</div>
+																</div>
+														</li>
+														<hr />
+												</ul>
 											<?php } ?>
-                        <button class="btn btn-warning btn-round" href="users.php">Find people</button>
                     </div>
                 </div>
             </div>
