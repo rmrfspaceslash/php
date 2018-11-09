@@ -59,7 +59,7 @@ require('db.php');
 	                </li>
 	                <li class="nav-item">
 	                    <a href="profile.php" target="_blank" class="nav-link">
-												<?php echo $_SESSION['firstname']; . 's Profile' ?>
+												<?php echo $_SESSION['firstname'] . 's Profile'; ?>
 											</a>
 	                </li>
 									<li>
