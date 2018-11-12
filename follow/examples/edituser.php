@@ -120,9 +120,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$_SESSION['description'] = $row['description'];
 		$_SESSION['title'] = $row['title'];
 }
-
+	$edited = true;
 }
 
+if ($edited == true) {
+	$edited = false;
+	header("Location: profile.php");
+}
 
 
 ?>
