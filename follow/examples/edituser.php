@@ -119,7 +119,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$_SESSION['lastname'] = $row['lastname'];
 		$_SESSION['description'] = $row['description'];
 		$_SESSION['title'] = $row['title'];
-		$_SESSION['img_url'] = $row['img_url'];
 }
 
 }
