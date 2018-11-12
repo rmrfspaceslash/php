@@ -72,12 +72,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					<span class="navbar-toggler-bar"></span>
 					<span class="navbar-toggler-bar"></span>
 	            </button>
-	            <a class="navbar-brand" href="#">Home</a>
+	            <a class="navbar-brand" href="profile.php">Home</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
 	                <li class="nav-item">
-	                    <a href="login.php" class="nav-link">Login</a>
+	                    <a href="users.php" class="nav-link">Follow People</a>
 	                </li>
 	                <li class="nav-item">
 	                    <a href="#" target="_blank" class="nav-link">
