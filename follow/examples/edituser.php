@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	                    <a href="profile.php" class="nav-link">Follow People</a>
 	                </li>
 	                <li class="nav-item">
-	                    <a href="profile.php" target="_blank" class="nav-link">
+	                    <a href="profile.php" target="_self" class="nav-link">
 												<?php echo $_SESSION['firstname'] . 's Profile'; ?>
 											</a>
 	                </li>
