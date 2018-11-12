@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		//if file hasnt been uploaded, upload it
 		if ($uploadver) {
 			move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
-			$_FILES['upload'] = null;
+			//$_FILES['upload'] = null;
 			$uploadver = false;
 		}
 
