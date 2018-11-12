@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		if ($uploadver) {
 			move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
 			//$_FILES['upload'] = null;
-			$img_url = $target_file/$_FILES['upload'];
+			//$img_url = $target_file/$_FILES['upload'];
 			$uploadver = false;
 		}
 
