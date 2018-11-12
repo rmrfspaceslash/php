@@ -89,9 +89,6 @@ require('db.php');
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <p><?php echo $_SESSION['description']; ?></p>
                         <br/>
-												<form action="edituser.php" method="post">
-                        <input type="submit" name="submit" value="Settings" class="btn btn-outline-default btn-round" href="edituser.php"></input>
-												</form>
                     </div>
                 </div>
                 <br/>
