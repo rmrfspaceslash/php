@@ -231,6 +231,7 @@ if ($edited == true) {
 																					<p>Edit your profile image</p>
 																					<input class="btn btn-primary" type="file" name="upload" value="Upload image">
 																				</li>
+																				<br/>
 																				<li>
 																				<br/>
 																					<input class="btn btn-primary" type="submit" name="submit" value="Confirm">
