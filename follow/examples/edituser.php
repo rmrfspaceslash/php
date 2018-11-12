@@ -102,7 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		if ($uploadver) {
 			move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
 			$_FILES['upload'] = null;
-			//$img_url = $target_file/$_FILES['upload'];
 			$uploadver = false;
 		}
 
@@ -115,7 +114,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	}
 
 	if (isset($_POST['upload']))
-	//echo "$img_url";
 	$sql = "UPDATE fm_users SET img_url = '$target_file' WHERE userid='$userid'";
 	$conn->query($sql);
 	}
