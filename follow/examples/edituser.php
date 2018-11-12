@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
 	                <li class="nav-item">
-	                    <a href="profile.php" class="nav-link">Follow People</a>
+	                    <a href="users.php" class="nav-link">Follow People</a>
 	                </li>
 	                <li class="nav-item">
 	                    <a href="profile.php" target="_self" class="nav-link">
