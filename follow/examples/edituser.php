@@ -105,18 +105,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$uploadver = false;
 		}
 
-		//extract results from query
-		while ($row = $result->fetch_assoc()) {
-			$_SESSION['firstname'] = $row['firstname'];
-			$_SESSION['lastname'] = $row['lastname'];
-			$_SESSION['description'] = $row['description'];
-			$_SESSION['title'] = $row['title'];
-	}
+
 
 	echo "$target_file";
 	$target_file = "./$target_file";
 	$sql = "UPDATE fm_users SET img_url='$target_file' WHERE userid='$userid'";
 	$conn->query($sql);
+
+	//extract results from query
+	while ($row = $result->fetch_assoc()) {
+		$_SESSION['firstname'] = $row['firstname'];
+		$_SESSION['lastname'] = $row['lastname'];
+		$_SESSION['description'] = $row['description'];
+		$_SESSION['title'] = $row['title'];
+}
 }
 
 
