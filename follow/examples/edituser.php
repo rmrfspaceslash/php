@@ -16,7 +16,7 @@ $userid = $_SESSION['userid'];
 $email = $_SESSION['users'];
 
 //update session variables
-$sql = "SELECT password, firstname, lastname, description, title FROM fm_users WHERE users = '$email'";
+$sql = "SELECT password, firstname, lastname, description, title, img_url FROM fm_users WHERE users = '$email'";
 
 //get results from query
 $result = $conn->query($sql);
@@ -27,6 +27,7 @@ while ($row = $result->fetch_assoc()) {
 		$_SESSION['lastname'] = $row['lastname'];
 		$_SESSION['description'] = $row['description'];
 		$_SESSION['title'] = $row['title'];
+		$_SESSION['img_url'] = $row['img_url'];
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -119,6 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$_SESSION['description'] = $row['description'];
 		$_SESSION['title'] = $row['title'];
 }
+
 }
 
 
