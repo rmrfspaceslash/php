@@ -89,7 +89,7 @@ require('db.php');
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <p><?php echo $_SESSION['description']; ?></p>
                         <br/>
-                        <btn class="btn btn-outline-default btn-round" href="edituser.php"><i class="fa fa-cog" href="edituser.php"></i> Settings</btn>
+                        <input class="btn btn-outline-default btn-round" href="edituser.php"><i class="fa fa-cog" href="edituser.php"></i> Settings</input>
                     </div>
                 </div>
                 <br/>
