@@ -228,12 +228,12 @@ if ($edited == true) {
 																				</li>
 																				<li>
 																				<br/>
-																					<input class="btn btn-primary" type="submit" name="submit" value="Confirm">
+																					<p>Edit your profile image</p>
+																					<input class="btn btn-primary" type="file" name="upload" value="Upload image">
 																				</li>
 																				<li>
 																				<br/>
-																					<p>Edit your profile image</p>
-																					<input class="btn btn-primary" type="file" name="upload" value="Upload image">
+																					<input class="btn btn-primary" type="submit" name="submit" value="Confirm">
 																				</li>
 																			</form>
                                 </ul>
