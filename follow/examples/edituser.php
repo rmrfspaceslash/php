@@ -106,6 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$target_file = "./$target_file";
 			$sql = "UPDATE fm_users SET img_url='$target_file' WHERE userid='$userid'";
 			$conn->query($sql);
+			$_SESSION['img_url'] = $target_file;
 		}
 
 
