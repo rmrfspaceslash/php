@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 }
 
 require('db.php');
-
+$userid = $_SESSION['userid'];
 //Create session username somewhere (session email)
 //modify fm-users table to include first name and last name and img_url
 //set session variables for first name and last name and img_url
@@ -63,6 +63,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	//get results from query
 	$result = $conn->query($sql);
 
+	//if upload is triggered, store the file
+	  if ($_FILES['upload'] != null) {
+
+	    //echo "HELOO HELOO";
+	    $target_dir = "uploads/".$_SESSION['username']."/";
+	    echo "$target_dir";
+	    //echo $_SESSION['username'];
+
+	    if (!file_exists("uploads")) {
+	      mkdir("./$userid/pro_img");
+	    }
+	    //check to see if directory exists
+	    if (file_exists($target_dir)) {
+	      $target_file = $target_dir . basename($_FILES['upload']['name']);
+	      $uploadver = true;
+	    }else {
+	      //if uploads directory does not exist, create it
+	      mkdir($target_dir, 0777, true);
+	      chmod($target_dir, 0777);
+	      $target_file = $target_dir . basename($_FILES['upload']['name']);
+	      $uploadver = true;
+	    }
+
+	  }
+
+	  //check if the file is already submitted
+	  if (file_exists($target_file)) {
+	    $uploadver = false;
+	    $ret = true;
+	    $output = "The file you are trying to upload already exists";
+	  }
+
+	  //get the uploaded file type
+	  $file_type = $_FILES['upload']['type'];
+
 	//extract results from query
 	while ($row = $result->fetch_assoc()) {
 			$_SESSION['firstname'] = $row['firstname'];
@@ -71,6 +106,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$_SESSION['title'] = $row['title'];
 	}
 }
+
+
 
 ?>
 
@@ -152,7 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
                                 <ul class="list-unstyled follows">
-																			<form class="" action="edituser.php" method="post">
+																			<form class="" action="edituser.php" method="post" enctype="multipart/form-data">
 																				<li>
 																					<p class="text-dark">Edit your firstname:</p>
 																					<input class="form-control" type="text" name="edit_firstname" value="<?php echo $_SESSION['firstname']; ?>"> <br/>
@@ -175,6 +212,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 																				<li>
 																				<br/>
 																					<input class="btn btn-primary" type="submit" name="submit" value="Confirm">
+																				</li>
+																				<li>
+																				<br/>
+																					<p>Edit your profile image</p>
+																					<input class="btn btn-primary" type="file" name="upload" value="Upload image">
 																				</li>
 																			</form>
                                 </ul>
