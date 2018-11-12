@@ -114,10 +114,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	}
 
 	echo "$target_file";
-	if (isset($_POST['upload'])) {
-	$sql = "UPDATE fm_users SET img_url = '$target_file' WHERE userid='$userid'";
+	$sql = "UPDATE fm_users SET img_url='$target_file' WHERE userid='$userid'";
 	$conn->query($sql);
-	}
 }
 
 
