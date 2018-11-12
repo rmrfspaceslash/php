@@ -72,8 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			}
 
 	    $target_dir = "uploads/".$userid."/";
-	    echo "$target_dir";
-
 
 	    //check to see if directory exists
 	    if (file_exists($target_dir)) {
@@ -104,14 +102,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
 			$_FILES['upload'] = null;
 			$uploadver = false;
+
+			$target_file = "./$target_file";
+			$sql = "UPDATE fm_users SET img_url='$target_file' WHERE userid='$userid'";
+			$conn->query($sql);
 		}
 
-
-
-	echo "$target_file";
-	$target_file = "./$target_file";
-	$sql = "UPDATE fm_users SET img_url='$target_file' WHERE userid='$userid'";
-	$conn->query($sql);
 
 	//extract results from query
 	while ($row = $result->fetch_assoc()) {
