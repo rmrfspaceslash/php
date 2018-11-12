@@ -66,14 +66,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	//if upload is triggered, store the file
 	  if ($_FILES['upload'] != null) {
 
-	    //echo "HELOO HELOO";
-	    $target_dir = "uploads/".$_SESSION['username']."/";
-	    echo "$target_dir";
-	    //echo $_SESSION['username'];
+			if (!file_exists("uploads")) {
+				mkdir("./uploads");
+			}
 
-	    if (!file_exists("uploads")) {
-	      mkdir("./$userid/pro_img");
-	    }
+	    $target_dir = "uploads/".$userid."/";
+	    echo "$target_dir";
+
+
 	    //check to see if directory exists
 	    if (file_exists($target_dir)) {
 	      $target_file = $target_dir . basename($_FILES['upload']['name']);
@@ -98,12 +98,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	  //get the uploaded file type
 	  $file_type = $_FILES['upload']['type'];
 
-	//extract results from query
-	while ($row = $result->fetch_assoc()) {
+		//if file hasnt been uploaded, upload it
+		if ($uploadver) {
+			move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
+			$_FILES['upload'] = null;
+			$uploadver = false;
+		}
+
+		//extract results from query
+		while ($row = $result->fetch_assoc()) {
 			$_SESSION['firstname'] = $row['firstname'];
 			$_SESSION['lastname'] = $row['lastname'];
 			$_SESSION['description'] = $row['description'];
 			$_SESSION['title'] = $row['title'];
+	}
+
+	if (isset($_POST['upload'])) {
+	$sql = "UPDATE fm_users SET img_url = '$target_file' WHERE users='$email'";
+	$conn->query($sql);
 	}
 }
 
